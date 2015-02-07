@@ -71,4 +71,7 @@ public class Location {
 		}
 		return null;
 	}
+	public Vector<Person> getP() {
+		return p;
+	}
 }

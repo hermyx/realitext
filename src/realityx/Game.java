@@ -62,7 +62,7 @@ public class Game {
 				act.execute();
 			}
 			else{
-				System.out.println("This Action isn't in the DataBase");
+				System.out.println("This action isn't in the DataBase");
 			}
 		}
 	}

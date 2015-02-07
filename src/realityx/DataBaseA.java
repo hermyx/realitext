@@ -17,6 +17,15 @@ public class DataBaseA extends DataBase<Action> {
 		}
 		return false;
 	}
+	
+	public Action getElem(String n){
+		for(Action a : db){
+			if(a.getType().equals(n)){
+				return a;
+			}
+		}
+		return null;
+	}
 
 	public void hogwards(Game g){
 		DataBaseA ret = new DataBaseA();

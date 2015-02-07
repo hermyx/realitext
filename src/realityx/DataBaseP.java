@@ -18,6 +18,15 @@ public class DataBaseP extends DataBase<Person> {
 		return false;
 	}
 	
+	public Person getElem(String n){
+		for(Person p : db){
+			if(p.getName().equals(n)){
+				return p;
+			}
+		}
+		return null;
+	}
+	
 	public void hogwards(Game g){
 		//Hermione character
 		Personality che = new Personality(9,9,5,7,6);

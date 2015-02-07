@@ -39,14 +39,19 @@ public class Action {
 		System.out.println("To whom you want to talk ?");
 		String toTalk = game.in.nextLine();
 		Person toT = game.getHero().getLocation().persWithName(toTalk);
-		if(toT!=null){
-			System.out.println("Vous parlez avec "+toT.getName()+"!");
-			if(toT.getGender()=='f'){
+		talk(toT);
+	}
+	public boolean talk(Person p){
+		if(p!=null && game.getHero().getLocation().isThere(p.getName())){
+			System.out.println("Vous parlez avec "+p.getName()+"!");
+			if(p.getGender()=='f'){
 				System.out.println("Elle aime ça :p!");
 			}
+			return true;
 		}
 		else{
 			System.out.println("Cette personne n'est pas dans "+game.getHero().getLocation().getName());
+			return false;
 		}
 	}
 	
@@ -57,11 +62,18 @@ public class Action {
 			System.out.println("- "+l.getName());
 		}
 		String goTo = game.in.nextLine();
-		if(game.getHero().getLocation().isGoTo(goTo)){
-			game.getHero().getLocation().locWithName(goTo);
+		move(goTo);
+	}
+	
+	public boolean move(String nameL){
+		if(game.getHero().getLocation().isGoTo(nameL)){
+			game.getHero().setLocation(game.getHero().getLocation().locWithName(nameL));
+			System.out.println("Vous vous trouvez à : "+game.getHero().getLocation().getName());
+			return true;
 		}
 		else{
 			System.out.println("Cette destination n'est pas valide !");
+			return false;
 		}
 	}
 
