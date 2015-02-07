@@ -1,0 +1,19 @@
+- In game, replace Main_places by Location[] all_places
+- Add a Location isOn, in each Player
+- In game, add a Person hero, as a attribute
+
+
+- Relationship (database ? or relation attribut in Person ?)
+- In there, put "type of relation" (ex : friend, fiancee, etc.) and "trusting level"
+
+
+- Implement a Game Attribute in Action
+
+- Implement the EventGenerator
+- Implement the TalkingEngine
+
+- Add a Type type (human, object, animal, etc)
+- Add a Clearance (with a Type type ?) to locations
+
+- Do the JUnit Tests
+- Implement Exceptions
