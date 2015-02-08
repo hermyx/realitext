@@ -2,7 +2,11 @@ package tests;
 
 import static org.junit.Assert.*;
 import junit.framework.Assert;
+
 import org.junit.Test;
+
+import fran.Constantes;
+import fran.Word;
 import realityx.Personality;
 
 public class TestPersonality {
@@ -25,5 +29,4 @@ public class TestPersonality {
 		assertTrue(c1.equals(c2));
 		assertFalse(c1.equals(c3));
 	}
-
 }

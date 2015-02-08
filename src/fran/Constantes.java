@@ -7,9 +7,12 @@ public class Constantes {
 		VERBE(2),
 		ADJECTIF(3),
 		ADVERBE(4),
-		PREPOSITION(5);
+		PREPOSITION(5),
+		PRONOM(6),
+		ONOMATOPEE(7),
+		CONJONCTION(8);
 		
-		private final int value;
+		public final int value;
 		
 		private Nature(int value) {
 	        this.value = value;
@@ -18,9 +21,10 @@ public class Constantes {
 	
 	public enum Genre {
 		MASCULIN(0),
-		FEMININ(1);
+		FEMININ(1),
+		BOTH(2); //Verbes, par exemple
 		
-		private final int value;
+		public final int value;
 		
 		private Genre(int value) {
 	        this.value = value;
@@ -29,9 +33,10 @@ public class Constantes {
 	
 	public enum Nombre {
 		SINGULIER(0),
-		PLURIEL(1);
+		PLURIEL(1),
+		BOTH(2); 
 		
-		private final int value;
+		public final int value;
 		
 		private Nombre(int value) {
 	        this.value = value;

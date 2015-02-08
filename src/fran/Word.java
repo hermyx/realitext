@@ -40,4 +40,15 @@ public class Word {
 		this.nom = nom;
 	}
 
+
+	
+	public boolean equals(Word wd){
+		boolean ret = true;
+		ret &= mot.equals(wd.getMot());
+		ret &= (nat.value == wd.getNat().value);
+		ret &= (gen.value == wd.getGen().value);
+		ret &= (nom.value == wd.getNom().value);
+		return ret;
+	}
+
 }
