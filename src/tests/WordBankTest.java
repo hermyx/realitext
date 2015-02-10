@@ -4,57 +4,58 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import realityx.Word;
 import fran.*;
 
 public class WordBankTest {
 
 	@Test
 	public void test() {
-		WordBank wb = new WordBank();
+		WordBankF wb = new WordBankF();
 		Word wt1 = new Word
-				("humain",Constantes.Nature.NOM,Constantes.Genre.MASCULIN,Constantes.Nombre.SINGULIER);
+				("humain",ConstF.Nature.NOM,ConstF.Genre.MASCULIN,ConstF.Nombre.SINGULIER);
 		Word wt2 = new Word
-				("humains",Constantes.Nature.NOM,Constantes.Genre.MASCULIN,Constantes.Nombre.PLURIEL);
+				("humains",ConstF.Nature.NOM,ConstF.Genre.MASCULIN,ConstF.Nombre.PLURIEL);
 		Word wt3 = new Word
-				("humaine",Constantes.Nature.NOM,Constantes.Genre.FEMININ,Constantes.Nombre.SINGULIER);
+				("humaine",ConstF.Nature.NOM,ConstF.Genre.FEMININ,ConstF.Nombre.SINGULIER);
 		Word wt4 = new Word
-				("humaines",Constantes.Nature.NOM,Constantes.Genre.FEMININ,Constantes.Nombre.PLURIEL);
+				("humaines",ConstF.Nature.NOM,ConstF.Genre.FEMININ,ConstF.Nombre.PLURIEL);
 		Word wt5 = new Word
-				("humain",Constantes.Nature.ADJECTIF,Constantes.Genre.MASCULIN,Constantes.Nombre.SINGULIER);
+				("humain",ConstF.Nature.ADJECTIF,ConstF.Genre.MASCULIN,ConstF.Nombre.SINGULIER);
 		Word wt6 = new Word
-				("humains",Constantes.Nature.ADJECTIF,Constantes.Genre.MASCULIN,Constantes.Nombre.PLURIEL);
+				("humains",ConstF.Nature.ADJECTIF,ConstF.Genre.MASCULIN,ConstF.Nombre.PLURIEL);
 		Word wt7 = new Word
-				("humaine",Constantes.Nature.ADJECTIF,Constantes.Genre.FEMININ,Constantes.Nombre.SINGULIER);
+				("humaine",ConstF.Nature.ADJECTIF,ConstF.Genre.FEMININ,ConstF.Nombre.SINGULIER);
 		Word wt8 = new Word
-				("humaines",Constantes.Nature.ADJECTIF,Constantes.Genre.FEMININ,Constantes.Nombre.PLURIEL);
+				("humaines",ConstF.Nature.ADJECTIF,ConstF.Genre.FEMININ,ConstF.Nombre.PLURIEL);
 		Word wt9 = new Word
-				("humaines",Constantes.Nature.NOM,Constantes.Genre.MASCULIN,Constantes.Nombre.PLURIEL);
+				("humaines",ConstF.Nature.NOM,ConstF.Genre.MASCULIN,ConstF.Nombre.PLURIEL);
 		Word wt10 = new Word
-				("humaines",Constantes.Nature.ADJECTIF,Constantes.Genre.MASCULIN,Constantes.Nombre.PLURIEL);
+				("humaines",ConstF.Nature.ADJECTIF,ConstF.Genre.MASCULIN,ConstF.Nombre.PLURIEL);
 		Word wt11 = new Word
-				("manger",Constantes.Nature.VERBE,Constantes.Genre.BOTH,Constantes.Nombre.BOTH);
+				("manger",ConstF.Nature.VERBE,ConstF.Genre.BOTH,ConstF.Nombre.BOTH);
 		Word wt12 = new Word
-				("mangé",Constantes.Nature.VERBE,Constantes.Genre.MASCULIN,Constantes.Nombre.SINGULIER);
+				("mangé",ConstF.Nature.VERBE,ConstF.Genre.MASCULIN,ConstF.Nombre.SINGULIER);
 		Word wt13 = new Word
-				("mangeons",Constantes.Nature.VERBE,Constantes.Genre.BOTH,Constantes.Nombre.PLURIEL);
+				("mangeons",ConstF.Nature.VERBE,ConstF.Genre.BOTH,ConstF.Nombre.PLURIEL);
 		Word wt14 = new Word
-				("manges",Constantes.Nature.VERBE,Constantes.Genre.BOTH,Constantes.Nombre.SINGULIER);
+				("manges",ConstF.Nature.VERBE,ConstF.Genre.BOTH,ConstF.Nombre.SINGULIER);
 		Word wt15 = new Word
-				("ce",Constantes.Nature.DETERMINANT,Constantes.Genre.MASCULIN,Constantes.Nombre.SINGULIER);
+				("ce",ConstF.Nature.DETERMINANT,ConstF.Genre.MASCULIN,ConstF.Nombre.SINGULIER);
 		Word wt16 = new Word
-				("cette",Constantes.Nature.DETERMINANT,Constantes.Genre.FEMININ,Constantes.Nombre.SINGULIER);
+				("cette",ConstF.Nature.DETERMINANT,ConstF.Genre.FEMININ,ConstF.Nombre.SINGULIER);
 		Word wt17 = new Word
-				("ces",Constantes.Nature.DETERMINANT,Constantes.Genre.BOTH,Constantes.Nombre.PLURIEL);
+				("ces",ConstF.Nature.DETERMINANT,ConstF.Genre.BOTH,ConstF.Nombre.PLURIEL);
 		Word wt18 = new Word
-				("difficilement",Constantes.Nature.ADVERBE,Constantes.Genre.BOTH,Constantes.Nombre.BOTH);
+				("difficilement",ConstF.Nature.ADVERBE,ConstF.Genre.BOTH,ConstF.Nombre.BOTH);
 		Word wt19 = new Word
-				("blanc",Constantes.Nature.ADJECTIF,Constantes.Genre.MASCULIN,Constantes.Nombre.SINGULIER);
+				("blanc",ConstF.Nature.ADJECTIF,ConstF.Genre.MASCULIN,ConstF.Nombre.SINGULIER);
 		Word wt20 = new Word
-				("blancs",Constantes.Nature.ADJECTIF,Constantes.Genre.MASCULIN,Constantes.Nombre.PLURIEL);
+				("blancs",ConstF.Nature.ADJECTIF,ConstF.Genre.MASCULIN,ConstF.Nombre.PLURIEL);
 		Word wt21 = new Word
-				("blanche",Constantes.Nature.ADJECTIF,Constantes.Genre.FEMININ,Constantes.Nombre.SINGULIER);
+				("blanche",ConstF.Nature.ADJECTIF,ConstF.Genre.FEMININ,ConstF.Nombre.SINGULIER);
 		Word wt22 = new Word
-				("blanches",Constantes.Nature.ADJECTIF,Constantes.Genre.FEMININ,Constantes.Nombre.PLURIEL);
+				("blanches",ConstF.Nature.ADJECTIF,ConstF.Genre.FEMININ,ConstF.Nombre.PLURIEL);
 		
 		assertTrue(wb.isIn(wt1));
 		assertTrue(wb.isIn(wt2));
@@ -74,7 +75,7 @@ public class WordBankTest {
 		assertTrue(wb.isIn(wt16));
 		assertTrue(wb.isIn(wt17));
 		
-		assertTrue(wt22.equals(wb.wWithName("blanches")));
+		assertTrue(wt22.equals(wb.isF("blanches")));
 		
 		
 	}

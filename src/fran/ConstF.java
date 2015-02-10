@@ -1,6 +1,6 @@
 package fran;
 
-public class Constantes {
+public class ConstF {
 	public enum Nature {
 		DETERMINANT(0),
 		NOM(1),

@@ -5,9 +5,9 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import fran.Constantes;
-import fran.Word;
+import fran.ConstF;
 import realityx.Personality;
+import realityx.Word;
 
 public class TestPersonality {
 

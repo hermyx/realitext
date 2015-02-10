@@ -2,6 +2,8 @@ package tests;
 
 import static org.junit.Assert.*;
 
+import java.util.Vector;
+
 import org.junit.Test;
 
 import realityx.Game;
@@ -21,13 +23,15 @@ public class TestLocation {
 	
 	@Test
 	public void testAddP() {
+		LocationBuilder lb = new LocationBuilder();
+		Vector<Location> hogwards2 = lb.hogwards();
+		Game game = new Game(hogwards2, "Hogwards");
 		String hog = "Hogwards";
 		Personality che = new Personality(9,9,5,7,6);
 		Personality cha = new Personality(6,2,6,7,7);
 		Personality mep = new Personality(9,5,6,9,7);
-		Person her = new Person("Hermione",che,16,'f');
-		Person har = new Person("Harry",cha,16,'h');
-		Person me = new Person("Hermyx",mep,16,'h');
+		Person her = new Person("Hermione",che,16,'f',game);
+		Person har = new Person("Harry",cha,16,'h',game);
 		Location hogwards = new Location(hog);
 		assertFalse(hogwards.isThere(her.getName()));
 		assertSame(null,hogwards.persWithName("Hermione"));

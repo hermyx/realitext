@@ -27,11 +27,12 @@ public class TestAction {
 	
 	@Test
 	public void testTalk(){
-		Personality me = new Personality(9,5,6,9,7);
-		Person hero = new Person("Hermyx",me,16,'h');
 		LocationBuilder lb = new LocationBuilder();
 		Vector<Location> hogwards = lb.hogwards();
-		Game game = new Game(hogwards,hero, "Hogwards");
+		Game game = new Game(hogwards, "Hogwards");
+		Personality me = new Personality(9,5,6,9,7);
+		Person hero = new Person("Hermyx",me,16,'h',game);
+		game.addHero(hero);
 		game.getHero().setLocation(game.getPlace("Main Entrance"));
 		game.getHero().getLocation().addP(game.getDbP().getDb().firstElement());
 		Action act = new Action("Talk", game);
@@ -42,11 +43,12 @@ public class TestAction {
 	
 	@Test
 	public void testTalk2(){ //Without the add of Hermione
-		Personality me = new Personality(9,5,6,9,7);
-		Person hero = new Person("Hermyx",me,16,'h');
 		LocationBuilder lb = new LocationBuilder();
 		Vector<Location> hogwards = lb.hogwards();
-		Game game = new Game(hogwards,hero, "Hogwards");
+		Game game = new Game(hogwards, "Hogwards");
+		Personality me = new Personality(9,5,6,9,7);
+		Person hero = new Person("Hermyx",me,16,'h',game);
+		game.addHero(hero);
 		game.getHero().setLocation(game.getPlace("Main Entrance"));
 		Action act = new Action("Talk", game);
 		assertTrue(game.getHero().getLocation().getP().size()==0
@@ -56,11 +58,12 @@ public class TestAction {
 	
 	@Test
 	public void testMove(){
-		Personality me = new Personality(9,5,6,9,7);
-		Person hero = new Person("Hermyx",me,16,'h');
 		LocationBuilder lb = new LocationBuilder();
 		Vector<Location> hogwards = lb.hogwards();
-		Game game = new Game(hogwards,hero, "Hogwards");
+		Game game = new Game(hogwards, "Hogwards");
+		Personality me = new Personality(9,5,6,9,7);
+		Person hero = new Person("Hermyx",me,16,'h',game);
+		game.addHero(hero);
 		game.getHero().setLocation(game.getPlace("Main Entrance"));
 		Action act = new Action("Move", game);
 		assertTrue(act.move("Stairway"));

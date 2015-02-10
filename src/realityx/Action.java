@@ -44,7 +44,8 @@ public class Action {
 	public boolean talk(Person p){
 		if(p!=null && game.getHero().getLocation().isThere(p.getName())){
 			System.out.println("Vous parlez avec "+p.getName()+"!");
-			if(p.getGender()=='f'){
+			if(p.getType().isType("humaine")){
+				// Enlever ça dans la release, c'est pour le test du genre
 				System.out.println("Elle aime ça :p!");
 			}
 			return true;

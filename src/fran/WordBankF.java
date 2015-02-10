@@ -6,23 +6,24 @@ import java.util.HashMap;
 import java.util.Vector;
 import java.util.regex.*;
 
-import fran.Constantes.Genre;
-import fran.Constantes.Nature;
-import fran.Constantes.Nombre;
+import fran.ConstF.Genre;
+import fran.ConstF.Nature;
+import fran.ConstF.Nombre;
 import realityx.Event;
 import realityx.Game;
 import realityx.Location;
 import realityx.LocationBuilder;
 import realityx.Person;
 import realityx.Personality;
+import realityx.Word;
 
-public class WordBank {
+public class WordBankF {
 	protected Vector<Word> db;
-	private final HashMap<String, Constantes.Nature> translatorNat = new HashMap();
-	private final HashMap<String, Constantes.Genre> translatorGen = new HashMap();
-	private final HashMap<String, Constantes.Nombre> translatorNom = new HashMap();
+	private final HashMap<String, ConstF.Nature> translatorNat = new HashMap();
+	private final HashMap<String, ConstF.Genre> translatorGen = new HashMap();
+	private final HashMap<String, ConstF.Nombre> translatorNom = new HashMap();
 
-	public WordBank() {
+	public WordBankF() {
 		db = new Vector<Word>();
 		initTrans();
 		fillFran();
@@ -60,7 +61,7 @@ public class WordBank {
 		return false;
 	}
 	
-	public Word wWithName(String m){
+	public Word isF(String m){
 		for (Word w : db){
 			if(w!=null){
 			    if(m.equals(w.getMot())){
@@ -69,6 +70,18 @@ public class WordBank {
 			}
 		}
 		return null;
+	}
+	
+	public Vector<Word> allWordWithName(String m){
+		Vector<Word> ret = new Vector<Word>(0);
+		for (Word w : db){
+			if(w!=null){
+			    if(m.equals(w.getMot())){
+			    	ret.add(w);
+			    }
+			}
+		}
+		return ret;
 	}
 
 	
@@ -177,18 +190,18 @@ public class WordBank {
 //--------------------------------------------------------------------------------------------------
 	  public void initTrans(){
 
-		translatorNat.put("NOM", Constantes.Nature.NOM);
-		translatorNat.put("VERBE", Constantes.Nature.VERBE);
-		translatorNat.put("ADJECTIF", Constantes.Nature.ADJECTIF);
-		translatorNat.put("ADVERBE", Constantes.Nature.ADVERBE);
-		translatorNat.put("DETERMINANT", Constantes.Nature.DETERMINANT);
-		translatorNat.put("CONJONCTION", Constantes.Nature.CONJONCTION);
-		translatorGen.put("FEMININ", Constantes.Genre.FEMININ);
-		translatorGen.put("MASCULIN", Constantes.Genre.MASCULIN);
-		translatorGen.put("BOTH", Constantes.Genre.BOTH);
-		translatorNom.put("SINGULIER", Constantes.Nombre.SINGULIER);
-		translatorNom.put("PLURIEL", Constantes.Nombre.PLURIEL);
-		translatorNom.put("BOTH", Constantes.Nombre.BOTH);
+		translatorNat.put("NOM", ConstF.Nature.NOM);
+		translatorNat.put("VERBE", ConstF.Nature.VERBE);
+		translatorNat.put("ADJECTIF", ConstF.Nature.ADJECTIF);
+		translatorNat.put("ADVERBE", ConstF.Nature.ADVERBE);
+		translatorNat.put("DETERMINANT", ConstF.Nature.DETERMINANT);
+		translatorNat.put("CONJONCTION", ConstF.Nature.CONJONCTION);
+		translatorGen.put("FEMININ", ConstF.Genre.FEMININ);
+		translatorGen.put("MASCULIN", ConstF.Genre.MASCULIN);
+		translatorGen.put("BOTH", ConstF.Genre.BOTH);
+		translatorNom.put("SINGULIER", ConstF.Nombre.SINGULIER);
+		translatorNom.put("PLURIEL", ConstF.Nombre.PLURIEL);
+		translatorNom.put("BOTH", ConstF.Nombre.BOTH);
 		
 	}
 	
@@ -205,9 +218,9 @@ public class WordBank {
 					System.out.println("toto");
 				}
 				String n = parts[0];
-				Constantes.Nature nature = translatorNat.get(parts[1]);
-				Constantes.Genre genre = translatorGen.get(parts[2]);
-				Constantes.Nombre nombre = translatorNom.get(parts[3]);
+				ConstF.Nature nature = translatorNat.get(parts[1]);
+				ConstF.Genre genre = translatorGen.get(parts[2]);
+				ConstF.Nombre nombre = translatorNom.get(parts[3]);
 				Word word = new Word(n,nature,genre,nombre);
 				db.addElement(word);
 			}
@@ -219,7 +232,7 @@ public class WordBank {
 
 	}
 	public static void main(String[] args){
-		WordBank db = new WordBank();
+		WordBankF db = new WordBankF();
 	}
 	
 }

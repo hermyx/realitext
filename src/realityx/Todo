@@ -1,8 +1,6 @@
 - Relationship (database ? or relation attribut in Person ?)
 - In there, put "type of relation" (ex : friend, fiancee, etc.) and "trusting level"
 
-- Implement a Game Attribute in Action
-
 - Implement the EventGenerator
 - Implement the TalkingEngine
 

@@ -1,12 +1,20 @@
-package fran;
+package realityx;
 
-import fran.Constantes.*;
+import fran.*;
+import fran.ConstF.*;
 
 public class Word {
 	private String mot;
 	private Nature nat;
 	private Genre gen;
 	private Nombre nom;
+	
+	public Word(){
+		mot="";
+		nat=ConstF.Nature.NOM;
+		gen=ConstF.Genre.BOTH;
+		nom=ConstF.Nombre.BOTH;
+	}
 	
 	public Word(String m, Nature n, Genre g, Nombre nb){
 		mot = m;
@@ -39,8 +47,6 @@ public class Word {
 	public void setNom(Nombre nom) {
 		this.nom = nom;
 	}
-
-
 	
 	public boolean equals(Word wd){
 		boolean ret = true;

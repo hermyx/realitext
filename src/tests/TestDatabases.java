@@ -12,16 +12,16 @@ public class TestDatabases {
 
 	@Test
 	public void test() {
-		String hog = "Hogwards";
-		Personality me = new Personality(9,5,6,9,7);
-		Person hero = new Person("Hermyx",me,16,'h');
 		LocationBuilder lb = new LocationBuilder();
 		Vector<Location> hogwards = lb.hogwards();
-		Game game = new Game(hogwards,hero,"Hogwards");
+		Game game = new Game(hogwards, "Hogwards");
+		Personality me = new Personality(9,5,6,9,7);
+		Person hero = new Person("Hermyx",me,16,'h',game);
+		game.addHero(hero);
 		Person prem = game.getDbP().getDb().firstElement();
 		Personality che = new Personality(9,9,5,7,6);
-		Person her = new Person("Hermione",che,16,'f');
-		Person toto = new Person("Toto",che,17,'h');
+		Person her = new Person("Hermione",che,16,'f',game);
+		Person toto = new Person("Toto",che,17,'h',game);
 		assertTrue(prem.equals(her));
 		assertTrue(game.getDbP().isIn(her));
 		assertFalse(game.getDbP().isIn(toto));
