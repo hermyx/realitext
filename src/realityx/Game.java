@@ -1,6 +1,7 @@
 package realityx;
 
 import java.util.Scanner;
+import fran.*;
 import java.util.Vector;
 
 public class Game {
@@ -9,12 +10,14 @@ public class Game {
 	public Scanner in = new Scanner(System.in);
 	private DataBaseP dbP;
 	private DataBaseA dbA;
+	private WordBank dicof;
 
 	public Game() {
 		places = new Vector(0);
 		hero = new Person();
 		dbP = new DataBaseP();
 		dbA = new DataBaseA();
+		dicof = new WordBank();
 	}
 	
 	public Game(Vector<Location> l, Person h, String type){
@@ -24,6 +27,7 @@ public class Game {
 		dbP.type(type, this);
 		dbA = new DataBaseA();
 		dbA.type(type, this);
+		dicof = new WordBank();
 	}
 	
 	public DataBaseP getDbP() {
@@ -76,5 +80,17 @@ public class Game {
 		Game game = new Game(hogwards,hero, "Hogwards");
 		game.hero.setLocation(game.getPlace("Main Entrance"));
 		game.game_flow();
+	}
+
+	public WordBank getDicof() {
+		return dicof;
+	}
+	
+	public boolean isInDicof(Word d){
+		return dicof.isIn(d);
+	}
+	
+	public Word wordWithName(String n){
+		return dicof.wWithName(n);
 	}
 }

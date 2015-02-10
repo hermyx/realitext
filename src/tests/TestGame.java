@@ -6,6 +6,8 @@ import java.util.Vector;
 
 import org.junit.Test;
 
+import fran.Constantes;
+import fran.Word;
 import realityx.*;
 
 public class TestGame {
@@ -37,6 +39,18 @@ public class TestGame {
 			}
 		}
 		assertTrue(test);
+	}
+	
+	@Test
+	public void testDicof(){
+		Personality me = new Personality(9,5,6,9,7);
+		Person hero = new Person("Hermyx",me,16,'h');
+		LocationBuilder lb = new LocationBuilder();
+		Vector<Location> hogwards = lb.hogwards();
+		Game game = new Game(hogwards,hero, "Hogwards");
+		Word wt = new Word("blanches",Constantes.Nature.ADJECTIF,
+				Constantes.Genre.FEMININ,Constantes.Nombre.PLURIEL);
+		assertTrue(wt.equals(game.wordWithName("blanches")));
 	}
 
 }

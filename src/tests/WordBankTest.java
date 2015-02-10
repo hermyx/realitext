@@ -39,6 +39,22 @@ public class WordBankTest {
 				("mangeons",Constantes.Nature.VERBE,Constantes.Genre.BOTH,Constantes.Nombre.PLURIEL);
 		Word wt14 = new Word
 				("manges",Constantes.Nature.VERBE,Constantes.Genre.BOTH,Constantes.Nombre.SINGULIER);
+		Word wt15 = new Word
+				("ce",Constantes.Nature.DETERMINANT,Constantes.Genre.MASCULIN,Constantes.Nombre.SINGULIER);
+		Word wt16 = new Word
+				("cette",Constantes.Nature.DETERMINANT,Constantes.Genre.FEMININ,Constantes.Nombre.SINGULIER);
+		Word wt17 = new Word
+				("ces",Constantes.Nature.DETERMINANT,Constantes.Genre.BOTH,Constantes.Nombre.PLURIEL);
+		Word wt18 = new Word
+				("difficilement",Constantes.Nature.ADVERBE,Constantes.Genre.BOTH,Constantes.Nombre.BOTH);
+		Word wt19 = new Word
+				("blanc",Constantes.Nature.ADJECTIF,Constantes.Genre.MASCULIN,Constantes.Nombre.SINGULIER);
+		Word wt20 = new Word
+				("blancs",Constantes.Nature.ADJECTIF,Constantes.Genre.MASCULIN,Constantes.Nombre.PLURIEL);
+		Word wt21 = new Word
+				("blanche",Constantes.Nature.ADJECTIF,Constantes.Genre.FEMININ,Constantes.Nombre.SINGULIER);
+		Word wt22 = new Word
+				("blanches",Constantes.Nature.ADJECTIF,Constantes.Genre.FEMININ,Constantes.Nombre.PLURIEL);
 		
 		assertTrue(wb.isIn(wt1));
 		assertTrue(wb.isIn(wt2));
@@ -54,6 +70,12 @@ public class WordBankTest {
 		assertTrue(wb.isIn(wt12));
 		assertTrue(wb.isIn(wt13));
 		assertTrue(wb.isIn(wt14));
+		assertTrue(wb.isIn(wt15));
+		assertTrue(wb.isIn(wt16));
+		assertTrue(wb.isIn(wt17));
+		
+		assertTrue(wt22.equals(wb.wWithName("blanches")));
+		
 		
 	}
 
